@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/picturesFragment">
+
+    <fragment
+        android:id="@+id/picturesFragment"
+        android:name="ru.androidrt.test.presentation.pictures.PicturesFragment"
+        android:label="PicturesFragment"
+
+        tools:layout="@layout/fragment_pictures">
+        <action
+            android:id="@+id/action_picturesFragment_to_pictureFragment"
+            app:destination="@id/pictureFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pictureFragment"
+        android:name="ru.androidrt.test.presentation.picture.PictureDetailFragment"
+        android:label="PictureDetailFragment"
+
+        tools:layout="@layout/fragment_picture">
+        <argument
+            android:name="picture"
+            app:argType="ru.androidrt.test.domain.model.Picture" />
+    </fragment>
+</navigation>
